@@ -1,0 +1,13 @@
+<input type="text" placeholder="userId" [(ngModel)]="useId"/>
+<input type="text" placeholder="id" [(ngModel)]="id"/>
+<input type="text" placeholder="title" [(ngModel)]="title"/>
+<input type="text" placeholder="body" [(ngModel)]="body"/>
+<button type="button" id="btn_id" (click)="add_values()">ADD</button>
+<table id="table_id">
+  <tr>
+    <th *ngFor="let thead of tablehead" id={{thead}} (click)="sorting(thead)">{{thead}}</th>
+  </tr>
+  <tr *ngFor="let value of tablevalues">
+    <td *ngFor="let item of value">{{item}}</td>
+  </tr>
+</table>
