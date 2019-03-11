@@ -6,3 +6,20 @@
     <td *ngFor="let item of get_data(i)">{{item}}</td>
   </tr>
 </table>
+<h2>Add New Data To Table</h2>
+<div class="form">
+  <!--<button type="button" (click)="add()" class="btn_class">ADD</button>-->
+  <table id="new_tab">
+    <!--<tr>
+      <th *ngFor="let tdata of tableheading">{{tdata}}</th>
+    </tr>-->
+    <tr>
+      <td><input type="text" placeholder="userId" [(ngModel)]="userid"></td>
+      <td><input type="text" placeholder="id" [(ngModel)]="id"></td>
+      <td><input type="text" placeholder="title" [(ngModel)]="title"></td>
+      <td><input type="text" placeholder="body" [(ngModel)]="body"></td>
+    </tr>
+  </table>
+  <button type="button" class="new_btn" (click)="ok()">OK</button>
+  <button type="button" (click)="cancel()">Cancel</button>
+</div>
