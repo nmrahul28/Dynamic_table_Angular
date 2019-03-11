@@ -10,24 +10,24 @@ import * as $ from 'jquery';
 export class DatacomponentComponent implements OnInit {
   public data: any;
   public tablehead: string[];
-  public tablevalues: string[];
   public flag: boolean = true;
+  public input: any;
   constructor() { }
   ngOnInit() {
     var extract = new DataServiceService();
     this.data = extract.dataextract();
     this.tablehead = Object.keys(this.data[0]);
-    this.tablevalues = extract.get_data();
+    }
+  get_data(i:number) {
+    return Object.values(this.data[i]);
   }
-  sorting(param: any) {
+  sorting(param) {
     if (this.flag == true) {
-      console.log(this.flag);
-      console.log(param);
       this.data.sort(
         function (a, b) {
-          if (a.param > b.param && this.flag)
+          if (a[param] > b[param])
             return 1;
-          if (a.param < b.param && this.flag)
+          if (a[param] < b[param])
             return -1;
           else
             return 0;
@@ -37,12 +37,11 @@ export class DatacomponentComponent implements OnInit {
 
     else {
       if (this.flag == false) {
-        console.log(this.flag);
         this.data.sort(
           function (a: any, b: any) {
-            if (a.param < b.param && this.flag)
+            if (a[param] < b[param])
               return 1;
-            if (a.param > b.param && this.flag)
+            if (a[param] > b[param])
               return -1;
             else
               return 0;
