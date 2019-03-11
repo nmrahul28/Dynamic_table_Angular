@@ -2,3 +2,21 @@ table, th, td{
     border-collapse: collapse;
     border: 1px solid;
 }
+.form{
+    margin-top: 40px;
+}
+.btn_class{
+    margin-bottom: 40px;
+    margin-left: 50%;
+}
+#new_tab{
+    margin-left: 25%;
+}
+h2{
+    text-align: center;
+}
+.new_btn{
+    margin-left: 48%;
+    margin-top: 15px;
+    margin-right: 10px;
+}
