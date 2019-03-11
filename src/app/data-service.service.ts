@@ -23,4 +23,5 @@ export class DataServiceService {
     this.table_data = data1;
     return this.table_data;
   }
+}
   
